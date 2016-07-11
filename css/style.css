@@ -1,0 +1,59 @@
+ /** {
+  outline: red 1px solid;
+} */
+
+body{
+
+}
+
+header {
+	padding:1rem 0;
+}
+
+header > h1 {
+	text-align: center;
+	font-size:2rem;
+}
+
+.container {
+	/*background-color: orange; */
+	padding-top: 2rem;
+	margin: 0 auto;
+	width: 500px;
+	text-align: center;
+}
+
+.addItem {
+	margin-bottom: 2rem;
+	font-size:1em;
+	font-weight:bold;
+}
+
+.check {
+	margin-right: 15px;
+}
+
+.listItems > li {
+	list-style:none;
+	padding: 1rem 0;
+}
+
+.edit, .remove {
+	margin-left: 10px;
+}
+
+.clearButton {
+    padding:5px;
+}
+
+@media only screen and (max-width: 500px) {
+	
+	.container {
+		width:100%;
+		padding-top:0;
+	}
+
+	#userInput {
+		width: 150px;
+	}
+}
