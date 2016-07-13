@@ -2,10 +2,6 @@
   outline: red 1px solid;
 } */
 
-body{
-
-}
-
 header {
 	padding: 1rem 0;
 }
@@ -50,6 +46,10 @@ header > h1 {
     padding: 5px;
 }
 
+.completed {
+	text-decoration: line-through;
+}
+
 @media only screen and (max-width: 500px) {
 	
 	.container {
@@ -57,7 +57,7 @@ header > h1 {
 		padding-top: 0;
 	}
 
-	#userInput {
+	#newItem {
 		width: 150px;
 	}
 }
