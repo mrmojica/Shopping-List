@@ -13,16 +13,16 @@
 </header>
 <div class="container">
 	<div class="addItem">
-		<form>
-		Item: <input id="newItem" type="text" name="itemName"> 
-		<button id="addButton" type="button"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+		<form id="newForm">
+		<label> Item: <input id="newItem" type="text" name="itemName"> </label>
+		<button id="addButton" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
 		</form>
 	</div>
 	<div class="content">
 		<ul class="listItems">
 			<li class="item">
-				<input class="check" type="checkbox" contenteditable="false">
-			 	<strong> Item 1 </strong> 
+				<input class="check" type="checkbox">
+			 	<strong contenteditable="true"> Item 1 </strong> 
 				 <button class="edit" type="button">
 				 	<i class="fa fa-pencil" aria-hidden="true"></i>
 				 </button> 
@@ -64,7 +64,7 @@
 		</ul>
 	</div>
 	<div class="reset">
-		<button class="clearButton" type="button">Clear All</button>
+		<button id="clearButton" type="button">Clear All</button>
 	</div>
 
 
