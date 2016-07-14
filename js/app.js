@@ -1,38 +1,35 @@
 $(document).ready(function() {
 
 /************Add Button*************/
-// add clear out input box after submission
-//add validation to make sure input is correct, dont add empty input
 
 $('#newForm').submit(function(event) {
 	event.preventDefault();
-	var $items = $('#newItem').val();
-	$('.listItems').append('<li class="item"><input class="check" type="checkbox">' + '<strong>' +$items + '</strong>' + '<button class="edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button><button class="remove" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button></li>');
+	var items = $('#newItem').val();
+	if (!$('#newItem').val()) {
+		alert('This field cannot be blank');
+	} else {
+	$('.listItems').append('<li class="item"><input class="check" type="checkbox" contenteditable="false">' + '<strong>' + items + '</strong>' + '<button class="edit" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button><button class="remove" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button></li>');
+	}
 });
 
 /************Checked Button*************/
 
-/* selected .listItems so function will apply to new added items on click with .check */
+
 $('.listItems').on('click', '.check', function() {
-	// if ($(this).is(':checked')) {
-	// /*	console.log('Checked'); */
-	// 	$(this).parent('.item').addClass('completed');
-	// } else {
- //    /*console.log('Unchecked'); */
- //    	$(this).parent('.item').removeClass('completed');
-
- //    } 
  	$(this).parent('.item').toggleClass('completed');
-
-
 });
+
 
 /************Edit Button*************/
 
 $('.listItems').on('click', '.edit', function() {
-	var newInput = '<input id="newItem" type="text" name="itemName">';
-	var enteredInput = newInput.val();
-	$(this).siblings('strong').html(newInput);	
+	var editInput = $(this).siblings('strong');
+	editInput.attr('contenteditable', 'true');
+	editInput.focus();
+	$(this).addClass('save');
+	$(this).children('i').attr('class', 'fa fa-floppy-o');
+
+	
 /*
 // .siblings('strong').attr(contenteditable="true")
 
@@ -46,6 +43,17 @@ ele.attr('contenteditable', true)
 */
 
 });
+
+$('.listItems').on('click', '.save', function() {
+	var saveInput = $(this).siblings('strong');
+	saveInput.attr('contenteditable', 'false');
+	saveInput.blur();
+	$(this).removeClass('save');
+	$(this).children('i').attr('class', 'fa fa-pencil');
+	
+
+
+	});
 
 
 /************Remove Button*************/
