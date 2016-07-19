@@ -53,6 +53,11 @@ $('.reset').on('click', '#clearButton', function() {
 	$('.listItems').children('li').remove();
 });
 
+/************Filter Button*************/
+$('.filterChecked').on('click', '#filter', function(){
+	$('.completed').closest('li').toggle();
+});
+
 
 });
 
