@@ -5,17 +5,18 @@
 	<title>Shopping List</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
 <header>
 	<h1>Shopping List!</h1>
 </header>
 <div class="container">
-	<div class="addItem">
+	<div class="addItem filterChecked">
 		<form id="newForm">
 		<label> Item: <input id="newItem" type="text" name="itemName"> </label>
 		<button id="addButton" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+		<button id="filter" type="button">Filter</button>
 		</form>
 	</div>
 	<div class="content">
@@ -66,6 +67,8 @@
 	<div class="reset">
 		<button id="clearButton" type="button">Clear All</button>
 	</div>
+
+
 </div>
 
 	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
